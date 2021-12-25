@@ -1,5 +1,14 @@
 //Node server which handle socket io connections
-const io=require('socket.io')(8000)
+var PORT=process.env.PORT || 5000;
+var express=require('express')
+var app=express();
+var http=require('http');
+var server=http.Server(app);
+app.use(express.static('client'));
+server.listen(PORT,function(){
+    console.log('chat server runing')
+})
+const io=require('socket.io')(server)
 
 const users ={}
 
