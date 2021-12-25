@@ -8,20 +8,20 @@ app.use(express.static('client'));
 server.listen(PORT,function(){
     console.log('chat server runing')
 })
-const io=require('socket.io')(server)
+const io=require('socket.io')(server);
 
 const users ={}
 
-io.on('connection',Socket=>{
-    Socket.on('new-user-joined',name=>{
-        users[Socket.id]=name;
-        Socket.broadcast.emit('user-joined',name);
+io.on('connection',function(socket){
+    socket.on('new-user-joined',name=>{
+        users[socket.id]=name;
+        socket.broadcast.emit('user-joined',name);
     });
-    Socket.on('send',message=>{
-        Socket.broadcast.emit('receive',{message: message,name:users[Socket.id]})
+    socket.on('send',message=>{
+        socket.broadcast.emit('receive',{message: message,name:users[socket.id]})
     });
-    Socket.on('disconnect',message=>{
-        Socket.broadcast.emit('left',users[Socket.id])
-        delete users[Socket.id]
+    socket.on('disconnect',message=>{
+        socket.broadcast.emit('left',users[socket.id])
+        delete users[socket.id]
     });
 })
