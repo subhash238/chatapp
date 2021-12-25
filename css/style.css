@@ -7,23 +7,65 @@
 }
 .container{
     max-width: 955px;
-    background-color: red;
+    /* background-color: red; */
+    border: 2px solid black;
     margin: auto;
-    height: 60vh;
+    height: 50vh;
+    padding: 33px;
+    overflow-y: auto;
+    margin-bottom: 23px;
+    background-image: url("https://cdn.wallpapersafari.com/39/66/Nkoz53.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .message{
-    background-color: grey;
     width: 24%;
     padding: 10px;
     margin: 17px 12px;
     border: 2px solid black;
     border-radius: 10px;
 }
+h1{
+    margin-top: 12px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
 .left{
+    background-color: blue;
+    color: white;
     float: left;
     clear: both;
+    font-weight: bolder;
 }
 .right{
+    background-color: cornsilk;
     float: right;
     clear: both;
+    font-weight: bolder;
+}  
+#send-container{
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 1085px;
+    width: 100%;
 }
+#messageInp{
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 34px;
+    font-size: 15px;
+    font-family: cursive;
+    background-image: url("https://image.shutterstock.com/image-vector/vector-seamless-mobile-apps-pattern-260nw-283356059.jpg");
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
+.btn{
+    cursor: pointer;
+    border: 2px solid black;  
+    border-radius: 6px;
+    height: 34px;
+}
+/* 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 */
